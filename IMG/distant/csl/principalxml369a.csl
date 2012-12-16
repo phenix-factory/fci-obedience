@@ -61,17 +61,22 @@
 <archive id="a2a_v2.zip" dtd="paquet">
 <zip>
 	<file>a2a_v2.zip</file>
-	<size>39953</size>
-	<date>1354417206</date>
+	<size>40510</size>
+	<date>1355626808</date>
 	<source>_plugins_/a2a/trunk</source>
-	<last_commit>2012-12-02 04:00:05</last_commit>
+	<last_commit>2012-12-16 04:00:06</last_commit>
 </zip>
 <traductions>
 <traduction module="a2a" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/a2a/trunk/lang/" reference="fr">
 	<langue code="en" url="http://trad.spip.net/tradlang_module/a2a?lang_cible=en">
 		<traducteur nom="kent1" lien="http://trad.spip.net/auteur/kent1" />
 	</langue>
-	<langue code="fr" />
+	<langue code="fr" url="http://trad.spip.net/tradlang_module/a2a?lang_cible=fr">
+		<traducteur nom="dlatr" lien="http://trad.spip.net/auteur/dlatr" />
+	</langue>
+	<langue code="it" url="http://trad.spip.net/tradlang_module/a2a?lang_cible=it">
+		<traducteur nom="dlatr" lien="http://trad.spip.net/auteur/dlatr" />
+	</langue>
 	<langue code="sk" url="http://trad.spip.net/tradlang_module/a2a?lang_cible=sk">
 		<traducteur nom="jaro" lien="http://trad.spip.net/auteur/jaro" />
 	</langue>
@@ -2700,10 +2705,10 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <archive id="agenda_3_5.zip" dtd="paquet">
 <zip>
 	<file>agenda_3_5.zip</file>
-	<size>144648</size>
-	<date>1355482804</date>
+	<size>144719</size>
+	<date>1355580004</date>
 	<source>_plugins_/agenda/trunk</source>
-	<last_commit>2012-12-14 12:00:02</last_commit>
+	<last_commit>2012-12-15 15:00:02</last_commit>
 </zip>
 <traductions>
 <traduction module="agenda" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/agenda/trunk/lang/" reference="fr">
@@ -2737,7 +2742,7 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <paquet
 	prefix="agenda"
 	categorie="date"
-	version="3.11.1"
+	version="3.11.2"
 	etat="stable"
 	compatibilite="[3.0.0;3.0.*]"
 	logo="prive/themes/spip/images/evenement-32.png"
@@ -3487,10 +3492,10 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <archive id="ancres_douces.zip" dtd="paquet">
 <zip>
 	<file>ancres_douces.zip</file>
-	<size>17675</size>
-	<date>1351738810</date>
+	<size>17682</size>
+	<date>1355576406</date>
 	<source>_plugins_/ancres_douces</source>
-	<last_commit>2012-11-01 04:00:09</last_commit>
+	<last_commit>2012-12-15 14:00:03</last_commit>
 </zip>
 <traductions>
 <traduction module="paquet-ancresdouces" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/ancres_douces/lang/" reference="fr">
@@ -3519,7 +3524,7 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <paquet
 	prefix="ancresdouces"
 	categorie="navigation"
-	version="1.4.2"
+	version="1.4.3"
 	etat="stable"
 	compatibilite="[3.0.0-dev;3.0.*]"
 	logo="ancres_douces-64.png"
@@ -9300,81 +9305,17 @@ Ce plugin permet de choisir une police pour les images typo parmi toutes celles 
 
 </archive>
 
-<archive id="ckeditor-spip-plugin.zip" dtd="paquet">
+<archive id="ckeditor-spip-plugin.zip">
 <zip>
 	<file>ckeditor-spip-plugin.zip</file>
-	<size>279316</size>
-	<date>1355317218</date>
+	<size>287349</size>
+	<date>1355648412</date>
 	<source>_plugins_/ckeditor-spip-plugin</source>
-	<last_commit>2012-12-12 14:00:12</last_commit>
+	<last_commit>2012-12-16 10:00:11</last_commit>
 </zip>
-<traductions>
-<traduction module="ckeditor" reference="fr">
-	<langue code="ar" />
-	<langue code="en" />
-</traduction>
-</traductions>
-
-<paquet
-	prefix="ckeditor"
-	categorie="edition"
-	version="0.16.0"
-	etat="dev"
-	compatibilite="[3.0.5;3.0.*]"
-	logo="images/ckspip-logo.png"
-	documentation="http://contrib.spip.net/CKeditor-3-0"
-	schema="1.0.0" 
->
-	<nom>ckeditor-spip3-plugin</nom>
-
-	<auteur mail="fredlefred@gmail.com">Fr&#233;d&#233;ric Bonnaud</auteur>
-	<auteur mail="superyms@gmail.com">Mehdi Cherifi (Superyms)</auteur>
-	<auteur mail="manu@netbsd.or">Emmanuel Dreyfus</auteur>
-	<credit>Alex (http://contrib.spip.net/CKeditor-3-0#forum459606)</credit>
-
-	<licence lien="http://www.gnu.org/licenses/gpl-2.0.html">GNU/GPL v2</licence>
-	<copyright>2009-2012</copyright>
-
-	<menu nom="configurer_ckeditor" titre="ckeditor:ckeditor_titre" parent="menu_configuration"  icone="images/ckspip-logo-16.png" />
-
-	<onglet nom="configurer_ckeditor" titre="ckeditor:ckeditor_p1" parent="configurer_ckeditor"  icone="images/ckspip-logo-24.png" />
-	<onglet nom="configurer_ckeditor_p2" titre="ckeditor:ckeditor_p2" parent="configurer_ckeditor"  icone="images/ckspip-logo-24.png" />
-	<onglet nom="configurer_ckeditor_p3" titre="ckeditor:ckeditor_p3" parent="configurer_ckeditor"  icone="images/ckspip-logo-24.png" />
-	<onglet nom="configurer_ckeditor_p4" titre="ckeditor:ckeditor_p4" parent="configurer_ckeditor"  icone="images/ckspip-logo-24.png" />
-	<onglet nom="configurer_ckeditor_p5" titre="ckeditor:ckeditor_p5" parent="configurer_ckeditor"  icone="images/ckspip-logo-24.png" />
-	<onglet nom="configurer_ckeditor_p6" titre="ckeditor:ckeditor_p6" parent="configurer_ckeditor"  icone="images/ckspip-logo-24.png" />
-	<onglet nom="configurer_ckeditor_p7" titre="ckeditor:ckeditor_p7" parent="configurer_ckeditor"  icone="images/ckspip-logo-24.png" />
-	<onglet nom="configurer_ckeditor_p8" titre="ckeditor:ckeditor_p8" parent="configurer_ckeditor"  icone="images/ckspip-logo-24.png" />
-
-	<pipeline nom="autoriser" inclure="ckeditor_autorisations.php" /> 
-	<pipeline nom="insert_head" inclure="ckeditor_fonctions.php" />
-	<pipeline nom="header_prive" inclure="ckeditor_fonctions.php" />
-	<pipeline nom="saisies_autonomes" inclure="ckeditor_fonctions.php" />
 
 
-	<necessite nom="saisies" compatibilite="[1.27.0;]" />
-	<necessite nom="yaml" compatibilite="[1.5.0;]" />
 
-	<lib nom='ckeditor' lien='http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.5/ckeditor_3.6.5.zip' />
-
-</paquet>
-<multis>
-<nom>
-<multi>
-[fr]ckeditor-spip3-plugin
-</multi>
-</nom>
-<slogan>
-<multi>
-[fr]CKeditor pour SPIP3
-</multi>
-</slogan>
-<description>
-<multi>
-[fr]Utiliser l'éditeur CKeditor avec SPIP3
-</multi>
-</description>
-</multis>
 
 </archive>
 
@@ -48018,10 +47959,10 @@ Thumbsites fournit un syst&#232;me de capture d'&#233;cran de site g&#233;n&#233
 <archive id="tickets_v2.zip" dtd="paquet">
 <zip>
 	<file>tickets_v2.zip</file>
-	<size>122885</size>
-	<date>1355281252</date>
+	<size>123308</size>
+	<date>1355587204</date>
 	<source>_plugins_/tickets/trunk</source>
-	<last_commit>2012-12-12 04:00:51</last_commit>
+	<last_commit>2012-12-15 17:00:02</last_commit>
 </zip>
 <traductions>
 <traduction module="tickets" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/tickets/trunk/lang/" reference="fr">
@@ -49559,10 +49500,10 @@ _ Exemples sur le site de [l'Association Point-C&oelig;ur->http://france.pointsc
 <archive id="tweetnspip.zip" dtd="plugin">
 <zip>
 	<file>tweetnspip.zip</file>
-	<size>154008</size>
-	<date>1353686526</date>
+	<size>154560</size>
+	<date>1355554804</date>
 	<source>_plugins_/tweetnspip</source>
-	<last_commit>2012-11-23 17:02:05</last_commit>
+	<last_commit>2012-12-15 08:00:03</last_commit>
 </zip>
 <traductions>
 <traduction module="tweetnspip" reference="fr">
@@ -52999,10 +52940,10 @@ Maak vooraf de cache leeg om het resultaat te zien.
 <archive id="escal_V3.zip" dtd="paquet">
 <zip>
 	<file>escal_V3.zip</file>
-	<size>762768</size>
-	<date>1355421608</date>
+	<size>763833</size>
+	<date>1355612418</date>
 	<source>_squelettes_/escal/branche_V3</source>
-	<last_commit>2012-12-13 19:00:02</last_commit>
+	<last_commit>2012-12-16 00:00:13</last_commit>
 </zip>
 <traductions>
 <traduction module="escal" reference="fr">
@@ -53019,7 +52960,7 @@ Maak vooraf de cache leeg om het resultaat te zien.
 <paquet
   prefix="escal"
   categorie="squelette"
-  version="3.66.8"
+  version="3.67.2"
   etat="stable"
   compatibilite="[2.10.0;["
   logo="images/escal32.png"
