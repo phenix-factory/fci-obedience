@@ -1,0 +1,145 @@
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_iview.php ../plugins/fabrique_auto/.backup/iview/base/iview.php ../plugins/fabrique_auto/iview/base/iview.php
+45c45
+< 		'tables_jointures'  => array(),
+---
+> 		'tables_jointures'  => array('spip_slides_liens'),
+66c66
+< 		'tables_jointures'  => array('spip_slideshows_liens'),
+---
+> 		'tables_jointures'  => array(),
+80c80
+< 	$tables['spip_slideshows_liens'] = array(
+---
+> 	$tables['spip_slides_liens'] = array(
+82c82
+< 			"id_slideshow"       => "bigint(21) DEFAULT '0' NOT NULL",
+---
+> 			"id_slide"           => "bigint(21) DEFAULT '0' NOT NULL",
+88,89c88,89
+< 			"PRIMARY KEY"        => "id_slideshow,id_objet,objet",
+< 			"KEY id_slideshow"   => "id_slideshow"
+---
+> 			"PRIMARY KEY"        => "id_slide,id_objet,objet",
+> 			"KEY id_slide"       => "id_slide"
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_iview.php ../plugins/fabrique_auto/.backup/iview/formulaires/editer_slide.php ../plugins/fabrique_auto/iview/formulaires/editer_slide.php
+16,17c16,17
+< function formulaires_editer_slide_identifier_dist($id_slide='new', $retour='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+< 	return serialize(array(intval($id_slide)));
+---
+> function formulaires_editer_slide_identifier_dist($id_slide='new', $retour='', $associer_objet='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+> 	return serialize(array(intval($id_slide), $associer_objet));
+23c23
+< function formulaires_editer_slide_charger_dist($id_slide='new', $retour='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+---
+> function formulaires_editer_slide_charger_dist($id_slide='new', $retour='', $associer_objet='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+31c31
+< function formulaires_editer_slide_verifier_dist($id_slide='new', $retour='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+---
+> function formulaires_editer_slide_verifier_dist($id_slide='new', $retour='', $associer_objet='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+38,39c38,54
+< function formulaires_editer_slide_traiter_dist($id_slide='new', $retour='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+< 	return formulaires_editer_objet_traiter('slide',$id_slide,'',$lier_trad,$retour,$config_fonc,$row,$hidden);
+---
+> function formulaires_editer_slide_traiter_dist($id_slide='new', $retour='', $associer_objet='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+> 	$res = formulaires_editer_objet_traiter('slide',$id_slide,'',$lier_trad,$retour,$config_fonc,$row,$hidden);
+>
+> 	// Un lien a prendre en compte ?
+> 	if ($associer_objet AND $id_slide = $res['id_slide']) {
+> 		list($objet, $id_objet) = explode('|', $associer_objet);
+>
+> 		if ($objet AND $id_objet AND autoriser('modifier', $objet, $id_objet)) {
+> 			include_spip('action/editer_liens');
+> 			objet_associer(array('slide' => $id_slide), array($objet => $id_objet));
+> 			if (isset($res['redirect'])) {
+> 				$res['redirect'] = parametre_url ($res['redirect'], "id_lien_ajoute", $id_slide, '&');
+> 			}
+> 		}
+> 	}
+> 	return $res;
+>
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_iview.php ../plugins/fabrique_auto/.backup/iview/formulaires/editer_slideshow.php ../plugins/fabrique_auto/iview/formulaires/editer_slideshow.php
+16,17c16,17
+< function formulaires_editer_slideshow_identifier_dist($id_slideshow='new', $retour='', $associer_objet='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+< 	return serialize(array(intval($id_slideshow), $associer_objet));
+---
+> function formulaires_editer_slideshow_identifier_dist($id_slideshow='new', $retour='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+> 	return serialize(array(intval($id_slideshow)));
+23c23
+< function formulaires_editer_slideshow_charger_dist($id_slideshow='new', $retour='', $associer_objet='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+---
+> function formulaires_editer_slideshow_charger_dist($id_slideshow='new', $retour='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+31c31
+< function formulaires_editer_slideshow_verifier_dist($id_slideshow='new', $retour='', $associer_objet='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+---
+> function formulaires_editer_slideshow_verifier_dist($id_slideshow='new', $retour='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+38,54c38,39
+< function formulaires_editer_slideshow_traiter_dist($id_slideshow='new', $retour='', $associer_objet='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+< 	$res = formulaires_editer_objet_traiter('slideshow',$id_slideshow,'',$lier_trad,$retour,$config_fonc,$row,$hidden);
+<
+< 	// Un lien a prendre en compte ?
+< 	if ($associer_objet AND $id_slideshow = $res['id_slideshow']) {
+< 		list($objet, $id_objet) = explode('|', $associer_objet);
+<
+< 		if ($objet AND $id_objet AND autoriser('modifier', $objet, $id_objet)) {
+< 			include_spip('action/editer_liens');
+< 			objet_associer(array('slideshow' => $id_slideshow), array($objet => $id_objet));
+< 			if (isset($res['redirect'])) {
+< 				$res['redirect'] = parametre_url ($res['redirect'], "id_lien_ajoute", $id_slideshow, '&');
+< 			}
+< 		}
+< 	}
+< 	return $res;
+<
+---
+> function formulaires_editer_slideshow_traiter_dist($id_slideshow='new', $retour='', $lier_trad=0, $config_fonc='', $row=array(), $hidden=''){
+> 	return formulaires_editer_objet_traiter('slideshow',$id_slideshow,'',$lier_trad,$retour,$config_fonc,$row,$hidden);
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_iview.php ../plugins/fabrique_auto/.backup/iview/iview_administrations.php ../plugins/fabrique_auto/iview/iview_administrations.php
+40c40
+< 	$maj['create'] = array(array('maj_tables', array('spip_slides', 'spip_slideshows', 'spip_slideshows_liens')));
+---
+> 	$maj['create'] = array(array('maj_tables', array('spip_slides', 'spip_slides_liens', 'spip_slideshows')));
+59a60
+> 	sql_drop_table("spip_slides_liens");
+61d61
+< 	sql_drop_table("spip_slideshows_liens");
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_iview.php ../plugins/fabrique_auto/.backup/iview/iview_autorisations.php ../plugins/fabrique_auto/iview/iview_autorisations.php
+65a66,69
+> // associer (lier / delier)
+> function autoriser_associerslides_dist($faire, $type, $id, $qui, $opt) {
+> 	return $qui['statut'] == '0minirezo' AND !$qui['restreint'];
+> }
+101,104d104
+< // associer (lier / delier)
+< function autoriser_associerslideshows_dist($faire, $type, $id, $qui, $opt) {
+< 	return $qui['statut'] == '0minirezo' AND !$qui['restreint'];
+< }
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_iview.php ../plugins/fabrique_auto/.backup/iview/iview_pipelines.php ../plugins/fabrique_auto/iview/iview_pipelines.php
+29,30c29,30
+< 	// slideshows sur les slides
+< 	if (!$e['edition'] AND in_array($e['type'], array('slide'))) {
+---
+> 	// slides sur les slideshows
+> 	if (!$e['edition'] AND in_array($e['type'], array('slideshow'))) {
+32c32
+< 			'table_source' => 'slideshows',
+---
+> 			'table_source' => 'slides',
+58c58
+< 	$flux['data'] += objet_optimiser_liens(array('slideshow'=>'*'),'*');
+---
+> 	$flux['data'] += objet_optimiser_liens(array('slide'=>'*'),'*');
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_iview.php ../plugins/fabrique_auto/.backup/iview/paquet.xml ../plugins/fabrique_auto/iview/paquet.xml
+12c12
+< 		Paquet généré le 2012-12-08 01:18:18
+---
+> 		Paquet généré le 2012-12-08 01:20:00
+Only in ../plugins/fabrique_auto/iview/prive/objets/liste: slides_associer.html
+Only in ../plugins/fabrique_auto/iview/prive/objets/liste: slides_associer_fonctions.php
+Only in ../plugins/fabrique_auto/iview/prive/objets/liste: slides_lies.html
+Only in ../plugins/fabrique_auto/iview/prive/objets/liste: slides_lies_fonctions.php
+Only in ../plugins/fabrique_auto/.backup/iview/prive/objets/liste: slideshows_associer.html
+Only in ../plugins/fabrique_auto/.backup/iview/prive/objets/liste: slideshows_associer_fonctions.php
+Only in ../plugins/fabrique_auto/.backup/iview/prive/objets/liste: slideshows_lies.html
+Only in ../plugins/fabrique_auto/.backup/iview/prive/objets/liste: slideshows_lies_fonctions.php
+Only in ../plugins/fabrique_auto/iview/prive/squelettes/contenu: slide_edit.html
+Only in ../plugins/fabrique_auto/.backup/iview/prive/squelettes/contenu: slideshow_edit.html

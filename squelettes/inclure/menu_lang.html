@@ -1,0 +1,23 @@
+[(#REM) boucle menu langue pour les articles, on va simplement chercher les différentes traductions de l'article]
+<B_article>
+<BOUCLE_article(ARTICLES){id_article}>
+	<BOUCLE_traductions(ARTICLES){traduction} {par lang} {inverse}>
+	  [(#EXPOSE{
+	  			'',
+	  			[<a href="(#URL_ACTION_AUTEUR{converser, #LANG}|parametre_url{var_lang, #LANG}|parametre_url{redirect, #URL_ARTICLE})">[(#LANG)]</a>]
+	  			})]
+	</BOUCLE_traductions>
+</BOUCLE_article>
+</B_article>
+	[(#REM) 
+		Si on est pas dans un article on est forcément dans une rubrique ou dans autre chose cela dit, mais ici on a que des articles et des rubriques. 
+		
+		On ce sert de la boucle DATA pour obtenir une liste des langues, elle fait l'explode toute seul la gentille.
+	]
+	<BOUCLE_langue_possibles(DATA){liste #CONFIG{langues_multilingue}} {inverse}>
+		[(#ENV{lang}|=={#VALEUR}|?{ 
+									'' ,
+									[<a href="(#URL_ACTION_AUTEUR{converser, #VALEUR}|parametre_url{var_lang, #VALEUR}|parametre_url{redirect, #SELF})">[(#VALEUR)]</a>]
+								})]
+	</BOUCLE_langue_possibles>
+<//B_article>

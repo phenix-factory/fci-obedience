@@ -1,0 +1,27 @@
+<nav id="navHeader" class="cadre">
+	<ul id="mainMenu">
+		<li class="mainMenuItem"><a href="#URL_SITE_SPIP" title="Acceuil">Acceuil</a></li>
+		[(#REM) On affiche les articles du menu header ]
+		<B_menuTopA>
+		<BOUCLE_menuTopA(ARTICLES){id_rubrique=1}{par num titre}{lang}>
+			[<li class="mainMenuItem"><a href="#URL_ARTICLE" title="[(#TITRE|supprimer_numero)]" [class="(#EXPOSE)"]>(#TITRE|supprimer_numero)</a></li>]
+		</BOUCLE_menuTopA>
+		</B_menuTopA>
+		<//B_menuTopA>
+		
+		[(#REM) On afficher les rubriques du menu header ]
+		<BOUCLE_menuTop(RUBRIQUES){id_parent=1}{par num titre}{lang}>
+			<li class="mainMenuItem">
+				<a href="#URL_RUBRIQUE" title="[(#TITRE|supprimer_numero)]">[(#TITRE|supprimer_numero)]</a>
+				<B_submenu>
+				<ul class="submenu animated cadre hide">
+				<BOUCLE_submenu(ARTICLES){id_rubrique=#ID_RUBRIQUE}{lang}>
+					[<li><a href="#URL_ARTICLE" title="[(#TITRE|supprimer_numero)]">(#TITRE|supprimer_numero)</a></li>]
+				</BOUCLE_submenu>
+				</ul>
+				</B_submenu>
+			</li>
+		</BOUCLE_menuTop>
+	</ul>
+	<div class="clear"></div>
+</nav>

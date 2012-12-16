@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|textebrut)" />]
+<INCLURE{fond=inclure/head} />
+</head>
+<body>
+<div class="page page_sommaire">
+	<INCLURE{fond=inclure/header} />	
+	
+	<INCLURE{fond=inclure/menu_sidebar, env}>
+	
+	<B_news>
+	<div id="contenu">
+	<BOUCLE_news(ARTICLES){id_rubrique=8} {par date} {inverse} {pagination 1}>
+		<article class="cadre">
+		
+			[<p class="date">(#DATE|affdate)</p>]
+			
+			[<h1>(#TITRE|supprimer_numero)</h1>]
+			
+			[<div class="chapo">(#CHAPO)</div>]
+
+			[(#TEXTE)]
+
+			[(#NOTES)]
+			
+			<INCLURE{fond=inclure/documents, env}>
+		</article>
+	</BOUCLE_news>
+	[<p class="pagination">(#PAGINATION{precedent_suivant})</p>] 
+	</div>
+	</B_news>
+	<p>Il n'y a pas de news à afficher.</p>
+	<//B_news>
+	
+	<div class="clear"></div>
+	
+	<INCLURE{fond=inclure/footer, env}>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<BOUCLE_principale(ARTICLES) {id_article}{lang}>
+<!DOCTYPE html>
+<html>
+<head>
+<title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|textebrut)" />]
+<INCLURE{fond=inclure/head} />
+</head>
+
+<body class="page_article">
+<div class="page">
+	<INCLURE{fond=inclure/header} />
+	
+	<INCLURE{fond=inclure/menu_sidebar, env}>
+	
+	<div id="contenu" class="cadre">
+		<article>
+			[<h1>(#TITRE|supprimer_numero)</h1>]
+			
+			[<p class="chapo">(#CHAPO)</p>]
+
+			[(#TEXTE)]
+
+			[(#NOTES)]
+			
+			<INCLURE{fond=inclure/documents, env}>
+		</article>
+	</div>
+	
+	<div class="clear"></div>
+	
+	<INCLURE{fond=inclure/footer, env}>
+</div>
+</body>
+</html>
+</html>
+</BOUCLE_principale>[(#INCLURE{fond=404, erreur=<:aucun_article:>})]
+<//B_principale>

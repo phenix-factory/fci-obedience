@@ -1,0 +1,136 @@
+body {
+	text-align: left;
+	border: 0;
+}
+
+header {
+    height: 300px;
+}
+
+.page {
+	width: 960px;
+	padding: 0;
+}
+
+.logo_site {
+	position: absolute;
+	z-index: 2;
+	float: left;
+	width: 269px;
+	margin-left: 20px;
+}
+
+/* Classe générale qui sert à styler les cadres */
+.cadre {
+	box-shadow: inset 0px 0px 4px #babab9;
+	border: 1px solid #b6b888;
+	border-radius: 5px;
+}
+
+.hide {
+	display: none;
+}
+
+/* Hover des liens */
+nav a {
+	padding: 3px;
+}
+
+nav a:hover {
+	border-radius: 5px;
+}
+
+/* Menu Header */
+nav#navHeader {
+	float: right;
+	margin-top: 240px;
+	width: 688px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#mainMenu {
+	width: 573px;
+	margin: 0 auto;
+}
+
+#mainMenu li.mainMenuItem {
+	float: left;
+	margin-right: 23px;
+}
+
+#mainMenu li.mainMenuItem:last-child {
+	margin-right: 0;
+}
+
+#mainMenu .submenu {
+	width: 100px;
+	
+	position: absolute;
+	width: 300px;
+	padding: 10px;
+	background: url("img/background.png") repeat scroll 0 0 #FFFFFF;
+}
+
+/* Menu Sidebar */
+nav#navSidebar {
+	float: left;
+	padding: 10px;
+	width: 170px;
+}
+
+#menuSidebar .submenuSidebar {
+	width: 100px;
+	
+	position: absolute;
+	width: 300px;
+	padding: 10px;
+	background: url("img/background.png") repeat scroll 0 0 #FFFFFF;
+	margin-left: 20px;
+}
+
+.menuSidebarItem {
+	width: auto;
+}
+
+/* contenu */
+#contenu {
+	float: left;
+	width: 696px;
+	margin-left: 50px;
+	padding: 10px;
+	margin-bottom: 100px;
+}
+
+/* Execption pour le sommaire */
+.page_sommaire #contenu {
+	padding: 0;
+}
+
+.page_sommaire article {
+	padding: 10px;
+	margin-bottom: 10px;
+	width: 696px;
+}
+
+/* footer du site */
+footer {
+	width: 940px;
+	padding: 10px;
+	margin-bottom: 50px;
+}
+
+footer p#copy {
+	text-align: center;
+	margin: 0;
+}
+
+.date {
+	float: right;
+	font-size: 12px;
+}
+
+.pagination .on {
+	background: #EEEEDD;
+	color: #990000;
+}
