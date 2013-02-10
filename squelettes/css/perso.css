@@ -45,12 +45,17 @@ header {
 }
 
 /* Hover des liens */
-nav a {
+a {
 	padding: 3px;
 }
 
-nav a:hover {
+a:hover {
 	border-radius: 5px;
+}
+
+a.mediabox:hover {
+	border-radius: 0px;	
+	background: none;
 }
 
 /* Menu Header */
@@ -156,7 +161,17 @@ footer p#copy {
 }
 
 .auteur h2 {
-	margin: 0;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.auteur .fiche {
+	margin-top: 10px;
+	text-align: right;
+}
+
+.auteur .titreMembre ul li {
+	text-align: center;
 }
 
 /* Agenda */

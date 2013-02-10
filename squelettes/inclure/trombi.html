@@ -1,13 +1,27 @@
 <B_comite>
 <BOUCLE_comite(AUTEURS){id_mot}{par nom}>
 <div class="auteur[ (#COMPTEUR_BOUCLE|alterner{'','', '', clear})]">
-	[<a href="[(#LOGO_AUTEUR|extraire_attribut{src})]" title="#NOM" class="mediabox">
-		(#LOGO_AUTEUR|image_passe_partout{120, 164}|image_recadre{120, 164}|vider_attribut{class}|centrer)
-	</a>]
-	[<h2 class="#EDIT{nom}">(#NOM|centrer)</h2>]
+	[<a href="[(#LOGO_AUTEUR|extraire_attribut{src})]" title="#NOM" class="mediabox">(#LOGO_AUTEUR|image_passe_partout{120, 164}|image_recadre{120,164}|vider_attribut{class}|centrer)</a>]
+	
+	[<h2 class="#EDIT{nom}"><a href="#URL_AUTEUR" title="#NOM">(#NOM)</a></h2>]
+
+	[(#REM) On affiche les titres de la personne ]
+	<B_titre>
+	<div class="titreMembre">
+		<ul>
+			<BOUCLE_titre(MOTS){id_auteur}{id_groupe=1}>
+			<li>#TITRE</li>
+			</BOUCLE_titre>
+		</ul>
+	</div>
+	</B_titre>
+	<p>Ce membre ce possède aucun titre.</p>
+	<//B_titre>
+
 	[<div class="#EDIT{bio}">(#BIO|centrer)</div>]
+	[<div class="fiche"><a href="(#URL_AUTEUR)" title="[(#NOM)]">Voir la fiche</a></div>]
 </div>
 </BOUCLE_comite>
 </B_comite>
-<p>Il n'y a pas d'auteur à afficher.</p>
+<p>Il n'y a personne a afficher ici.</p>
 <//B_comite>
