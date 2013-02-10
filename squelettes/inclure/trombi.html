@@ -1,0 +1,13 @@
+<B_comite>
+<BOUCLE_comite(AUTEURS){id_mot}{par nom}>
+<div class="auteur[ (#COMPTEUR_BOUCLE|alterner{'','', '', clear})]">
+	[<a href="[(#LOGO_AUTEUR|extraire_attribut{src})]" title="#NOM" class="mediabox">
+		(#LOGO_AUTEUR|image_passe_partout{120, 164}|image_recadre{120, 164}|vider_attribut{class}|centrer)
+	</a>]
+	[<h2 class="#EDIT{nom}">(#NOM|centrer)</h2>]
+	[<div class="#EDIT{bio}">(#BIO|centrer)</div>]
+</div>
+</BOUCLE_comite>
+</B_comite>
+<p>Il n'y a pas d'auteur à afficher.</p>
+<//B_comite>

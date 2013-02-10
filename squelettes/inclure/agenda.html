@@ -1,0 +1,47 @@
+<B_agenda>
+[(#REM) Script Google maps ]
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<div class="ficheAgenda">
+	<BOUCLE_agenda(EVENEMENTS){id_article}{par date}{statut=publie}>
+	<h2>#TITRE</h2>
+	
+	[<p class="date_event">(#DATE_DEBUT|Agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE})</p>]
+	
+	<script type="text/javascript">
+	function initialize() {
+		var address = "#ADRESSE";
+		var geocoder = new google.maps.Geocoder();
+
+		geocoder.geocode( { 'address': address}, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				var myOptions = {
+					zoom: 14,
+					center: results[0].geometry.location,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+
+				var marker = new google.maps.Marker({
+					map: map,
+					position: results[0].geometry.location
+				});
+			} else {
+				alert("Geocode was not successful for the following reason: " + status);
+			}
+		});
+	}
+	jQuery(document).ready(function($) {
+		initialize();
+	});
+	</script>
+
+	[<p class="lieu">(#LIEU)</p>]
+	
+	[<p class="descriptif">(#DESCRIPTIF)</p>]
+	
+	<div id="map_canvas" class="googleMap"></div>
+	
+	</BOUCLE_agenda>
+</div>
+</B_agenda>
