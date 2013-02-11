@@ -47,15 +47,20 @@ header {
 /* Hover des liens */
 a {
 	padding: 3px;
+	outline: none;
 }
 
 a:hover {
 	border-radius: 5px;
 }
 
+a.mediabox {
+	padding: 0;
+}
 a.mediabox:hover {
 	border-radius: 0px;	
 	background: none;
+	padding: 0;
 }
 
 /* Menu Header */
@@ -162,6 +167,7 @@ footer p#copy {
 
 .auteur h2 {
 	margin: 0 auto;
+	margin-top: 10px;
 	text-align: center;
 }
 

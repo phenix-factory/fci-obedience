@@ -12124,10 +12124,10 @@ Avec ce plugin, plus aucun objet n’est supprim&#233; automatiquement. La poube
 <archive id="couleur_rubrique2.zip" dtd="paquet">
 <zip>
 	<file>couleur_rubrique2.zip</file>
-	<size>15478</size>
-	<date>1360000824</date>
+	<size>15889</size>
+	<date>1360584030</date>
 	<source>_plugins_/couleur_rubrique/trunk</source>
-	<last_commit>2013-02-04 19:00:14</last_commit>
+	<last_commit>2013-02-11 13:00:29</last_commit>
 </zip>
 <traductions>
 <traduction module="pb_couleur_rubrique" reference="fr">
@@ -12137,7 +12137,7 @@ Avec ce plugin, plus aucun objet n’est supprim&#233; automatiquement. La poube
 <paquet
 prefix="pb_couleur_rubrique"
 categorie="maintenance"
-version="2.3.3"
+version="2.3.5"
 etat="test"
 compatibilite="[3.0.0;3.*]"
 logo="img_pack/pb_couleur_rubrique.png"
@@ -14579,10 +14579,10 @@ Il permet ainsi de définir en fonction d’un secteur particulier, un masque de
 <archive id="diogene.zip" dtd="paquet">
 <zip>
 	<file>diogene.zip</file>
-	<size>77170</size>
-	<date>1360447238</date>
+	<size>77176</size>
+	<date>1360598408</date>
 	<source>_plugins_/diogene/diogene/trunk</source>
-	<last_commit>2013-02-09 23:00:37</last_commit>
+	<last_commit>2013-02-11 17:00:06</last_commit>
 </zip>
 <traductions>
 <traduction module="diogene" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/diogene/diogene/trunk/lang/" reference="fr">
@@ -15085,10 +15085,10 @@ Il permet ainsi de définir en fonction d’un secteur particulier, un masque de
 <archive id="diogene_licence.zip" dtd="paquet">
 <zip>
 	<file>diogene_licence.zip</file>
-	<size>9463</size>
-	<date>1360033268</date>
+	<size>9679</size>
+	<date>1360573208</date>
 	<source>_plugins_/diogene/diogene_complements/diogene_licence/trunk</source>
-	<last_commit>2013-02-05 04:01:07</last_commit>
+	<last_commit>2013-02-11 10:00:06</last_commit>
 </zip>
 <traductions>
 <traduction module="diogene_licence" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/diogene/diogene_complements/diogene_licence/trunk/lang/" reference="fr">
@@ -22830,10 +22830,10 @@ _ Icon from [mattrich->http://mattrich.deviantart.com/art/Picnic-101256405] unde
 <archive id="gis3.zip" dtd="paquet">
 <zip>
 	<file>gis3.zip</file>
-	<size>89968</size>
-	<date>1354194038</date>
+	<size>92044</size>
+	<date>1360584022</date>
 	<source>_plugins_/gis/branches/v3</source>
-	<last_commit>2012-11-29 14:00:36</last_commit>
+	<last_commit>2013-02-11 13:00:22</last_commit>
 </zip>
 <traductions>
 <traduction module="gis" gestionnaire="salvatore" url="http://trad.spip.org" source="svn://zone.spip.org/spip-zone/_plugins_/gis/trunk/lang/" reference="fr">
@@ -22959,10 +22959,10 @@ _ Icon from [mattrich->http://mattrich.deviantart.com/art/Picnic-101256405] unde
 <archive id="gis4.zip" dtd="paquet">
 <zip>
 	<file>gis4.zip</file>
-	<size>109369</size>
-	<date>1359342024</date>
+	<size>111755</size>
+	<date>1360584036</date>
 	<source>_plugins_/gis/trunk</source>
-	<last_commit>2013-01-28 04:00:23</last_commit>
+	<last_commit>2013-02-11 13:00:34</last_commit>
 </zip>
 <traductions>
 <traduction module="gis" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/gis/trunk/lang/" reference="fr">
@@ -41972,10 +41972,10 @@ Pour éviter les doublons et les imports successifs, une fois l'article créé, 
 <archive id="saisies.zip" dtd="paquet">
 <zip>
 	<file>saisies.zip</file>
-	<size>164477</size>
-	<date>1359342066</date>
+	<size>167722</size>
+	<date>1360584016</date>
 	<source>_plugins_/saisies</source>
-	<last_commit>2013-01-28 04:01:04</last_commit>
+	<last_commit>2013-02-11 13:00:15</last_commit>
 </zip>
 <traductions>
 <traduction module="paquet-saisies" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/saisies/lang/" reference="fr">
@@ -42027,7 +42027,7 @@ Pour éviter les doublons et les imports successifs, une fois l'article créé, 
 <paquet
 	prefix="saisies"
 	categorie="outil"
-	version="1.28.2"
+	version="1.28.3"
 	etat="test"
 	compatibilite="[2.0.0;3.0.*]"
 	logo="images/logo_saisie_48.png"
@@ -57102,6 +57102,43 @@ Un squelette de portail d&#8217;Etablissement, destin&#233;e &#224; une &#233;co
 
 </archive>
 
+<archive id="fsgtf.zip" dtd="paquet">
+<zip>
+	<file>fsgtf.zip</file>
+	<size>706593</size>
+	<date>1359993664</date>
+	<source>_squelettes_/fsgtf</source>
+	<last_commit>2013-02-04 17:00:58</last_commit>
+</zip>
+<traductions>
+<traduction module="fsgtf" reference="fr">
+	<langue code="en" />
+</traduction>
+</traductions>
+
+<paquet
+	prefix="fsgtf"
+	categorie="squelette"
+	version="0.0.1"
+	etat="dev"
+	compatibilite="[3.0.5;3.0.*]"
+	logo="prive/themes/spip/images/fsgtf-32.png"
+	documentation="http://contrib.spip.net/Squelettes-Fullscreen-Gallery-With-Thumbnail-Flip"
+	schema="1.0.0" 
+>
+	<nom>Fullscreen Gallery with Thumbnail Flip</nom>
+	<auteur lien="http://www.spip-contrib.net/ngombe" mail="webtice@ac-guyane.fr">Gr&eacute;gory PASCAL</auteur>
+	<licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GPL</licence>
+	<credit lien="http://tympanus.net/codrops/2011/02/09/fullscreen-gallery-with-thumbnail-flip/">Mary Lou</credit>
+	<pipeline nom="affiche_milieu" inclure="fsgtf_pipelines.php" />
+	<pipeline nom="jqueryui_plugins" inclure="fsgtf_pipelines.php" />
+	<menu nom="fsgtf" titre="fsgtf:titre_menu_config" parent="menu_squelette" icone="images/fsgtf-16.png"  action="configurer_fsgtf" />
+	<utilise nom="palette" />
+</paquet>
+
+
+</archive>
+
 <archive id="globenews.zip" dtd="plugin">
 <zip>
 	<file>globenews.zip</file>
@@ -58465,6 +58502,40 @@ Son but est avant tout de permettre une vérification aisée de toutes les infor
 </multi>
 </description>
 </multis>
+
+</archive>
+
+<archive id="tng.zip" dtd="paquet">
+<zip>
+	<file>tng.zip</file>
+	<size>611074</size>
+	<date>1359993638</date>
+	<source>_squelettes_/tng</source>
+	<last_commit>2013-02-04 17:00:37</last_commit>
+</zip>
+<traductions>
+<traduction module="tng" reference="fr">
+</traduction>
+</traductions>
+
+<paquet
+	prefix="tng"
+	categorie="squelette"
+	version="0.0.1"
+	etat="dev"
+	compatibilite="];["
+	logo="prive/themes/spip/images/tng-32.png"
+	documentation="http://contrib.spip.net/Squelettes-Thumbnails-Navigation-Gallery"
+>
+	<nom>Squelette Thumbnails Navigation Gallery pour SPIP 3</nom>
+	<auteur lien="http://www.spip-contrib.net/ngombe" mail="webtice@ac-guyane.fr">Grégory PASCAL</auteur>
+	<licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GPL</licence>
+	<credit lien="http://tympanus.net/codrops/2010/07/29/thumbnails-navigation-gallery/">Mary Lou</credit>
+	<pipeline nom="affiche_milieu" inclure="tng_pipelines.php" />
+	<menu nom="tng" titre="tng:titre_menu_config" parent="menu_squelette" icone="images/tng-16.png"  action="configurer_tng"  />
+	<utilise nom="palette" />
+</paquet>
+
 
 </archive>
 
