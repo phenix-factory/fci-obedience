@@ -7,6 +7,39 @@
 	
 	[<p class="date_event">(#DATE_DEBUT|Agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE})</p>]
 	
+	<h3>Juge</h3>
+	[(#REM) On fait une boucle pour afficher les juges ]
+	[(#REM) Il faut d'abord transformer la chaine de la base de donnée en tableau pour l'utiliser avec IN ]
+	[(#SET{juge, [(#JUGE|explode{','})]})]
+	<B_juge>
+	<ul>
+		<BOUCLE_juge(AUTEURS){id_auteur IN #GET{juge}}{tout}>
+		[<li><a href="#URL_AUTEUR" title="#NOM">(#NOM)</a></li>]
+		</BOUCLE_juge>
+	</ul>
+	</B_juge>
+	<p>Aucun juge référencé pour ce concours.</p>
+	<//B_juge>
+	
+	<h3>Steward</h3>
+	[(#REM) Boucle qui affiche les steward ]
+	[(#REM) Il faut d'abord transformer la chaine de la base de donnée en tableau pour l'utiliser avec IN ]
+	[(#SET{steward, [(#STEWARD|explode{','})]})]
+	<B_steward>
+	<ul>
+		<BOUCLE_steward(AUTEURS){id_auteur IN #GET{steward}}{tout}>
+		[<li><a href="#URL_AUTEUR" title="#NOM">(#NOM)</a></li>]
+		</BOUCLE_steward>
+	</ul>
+	</B_steward>
+	<p>Aucun steward référencé pour ce concours.</p>
+	<//B_steward>
+	
+	[<p class="lieu">(#LIEU)</p>]
+	
+	[<p class="descriptif">(#DESCRIPTIF)</p>]
+	
+	
 	<script type="text/javascript">
 	function initialize() {
 		var address = "#ADRESSE";
@@ -36,10 +69,6 @@
 	});
 	</script>
 
-	[<p class="lieu">(#LIEU)</p>]
-	
-	[<p class="descriptif">(#DESCRIPTIF)</p>]
-	
 	<div id="map_canvas" class="googleMap"></div>
 	
 	</BOUCLE_agenda>

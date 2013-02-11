@@ -1,4 +1,4 @@
-<BOUCLE_principale(AUTEURS) {id_auteur} {lang}>
+<BOUCLE_principale(AUTEURS) {id_auteur} {tout}>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 [(#REM) Cf.: http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 ]<!--[if lt IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie6"> <![endif]-->
@@ -7,22 +7,46 @@
 <!--[if IE 9 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js"> <!--<![endif]-->
 <head>
-<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
-<title>[(#NOM|couper{80}|textebrut) - ][(#NOM_SITE_SPIP|textebrut)]</title>
-<INCLURE{fond=inclure/head} />
-<meta name="robots" content="none" />
-<link rel="alternate" type="application/rss+xml" title="[(#NOM|textebrut)]" href="[(#URL_PAGE{backend}|parametre_url{id_auteur,#ID_AUTEUR})]" />
+	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
+	<title>[(#NOM|couper{80}|textebrut) - ][(#NOM_SITE_SPIP|textebrut)]</title>
+	<INCLURE{fond=inclure/head} />
+	<meta name="robots" content="none" />
+	<link rel="alternate" type="application/rss+xml" title="[(#NOM|textebrut)]" href="[(#URL_PAGE{backend}|parametre_url{id_auteur,#ID_AUTEUR})]" />
 </head>
 
 <body class="pas_surlignable page_auteur">
-<div class="page">
-	<INCLURE{fond=inclure/header, env} />
-	
-	<INCLURE{fond=inclure/menu_sidebar, env}>
-	
-	<div id="contenu" class="cadre">
-		#NOM
-	</article>
+	<div class="page">
+		<INCLURE{fond=inclure/header, env} />
+		
+		<INCLURE{fond=inclure/menu_sidebar, env}>
+		
+		<div id="contenu" class="cadre">
+			[<h1 class="#EDIT{nom}">(#NOM)</h1>]
+			[<a href="[(#LOGO_AUTEUR|extraire_attribut{src})]" title="#NOM" class="mediabox">(#LOGO_AUTEUR|image_passe_partout{120, 164}|image_recadre{120,164})</a>]
+			
+			<h3>Biographie</h3>
+			
+			[<div class="#EDIT{bio}">(#BIO)</div>]
+			
+			<div class="clear"></div>
+			
+			<h3>Titre</h3>
+			
+			[(#REM) On affiche les titres de la personne ]
+			<B_titre>
+			<div class="titreMembre">
+				<ul>
+					<BOUCLE_titre(MOTS){id_auteur}{id_groupe=1}>
+					<li>#TITRE</li>
+					</BOUCLE_titre>
+				</ul>
+			</div>
+			</B_titre>
+			<p>Ce membre ce possède aucun titre.</p>
+			<//B_titre>
+			
+			[(#FORMULAIRE_ECRIRE_AUTEUR)]
+		</article>
 
 	</div>
 	
