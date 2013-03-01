@@ -103,6 +103,7 @@ a.mediabox:hover {
 #navSidebar {
 	float: left;
 	width: 170px;
+	margin-bottom: 20px;
 }
 
 #navSidebar nav {
@@ -224,8 +225,13 @@ h3 {
 #login_box {
 	margin-top: 10px;
 	padding: 10px;
+	font-size: 12px;
 }
 
 .formulaire_login input.text {
 	width: 105px;
+}
+
+.formulaire_login input[type=checkbox] {
+	float: left;
 }
