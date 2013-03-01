@@ -2637,10 +2637,10 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <archive id="agenda_2_0.zip" dtd="plugin">
 <zip>
 	<file>agenda_2_0.zip</file>
-	<size>106269</size>
-	<date>1359655210</date>
+	<size>107957</size>
+	<date>1360850408</date>
 	<source>_plugins_/agenda/2_0_0</source>
-	<last_commit>2013-01-31 19:00:10</last_commit>
+	<last_commit>2013-02-14 15:00:06</last_commit>
 </zip>
 <traductions>
 <traduction module="agenda" reference="fr">
@@ -2658,7 +2658,7 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 	[C&#233;dric MORIN->http://www.yterium.net], [b_b->http://www.spip-contrib.net/b_b], [romy.tetue.net->http://romy.tetue.net], [Julien Tessier->http://www.cahri.com]
 	</auteur>
 	<licence>GPL 3 - (c) 2006-2010</licence>
-	<version>2.4.1</version>
+	<version>2.4.2</version>
 	<version_base>0.23</version_base>
 	<etat>stable</etat>
 	<slogan>Agenda &#233;v&#233;nementiel</slogan>
@@ -2758,10 +2758,10 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <archive id="agenda_3_5.zip" dtd="paquet">
 <zip>
 	<file>agenda_3_5.zip</file>
-	<size>145028</size>
-	<date>1359126028</date>
+	<size>147669</size>
+	<date>1360850414</date>
 	<source>_plugins_/agenda/trunk</source>
-	<last_commit>2013-01-25 16:00:27</last_commit>
+	<last_commit>2013-02-14 15:00:13</last_commit>
 </zip>
 <traductions>
 <traduction module="agenda" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/agenda/trunk/lang/" reference="fr">
@@ -2797,7 +2797,7 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <paquet
 	prefix="agenda"
 	categorie="date"
-	version="3.11.3"
+	version="3.11.4"
 	etat="stable"
 	compatibilite="[3.0.0;3.0.*]"
 	logo="prive/themes/spip/images/evenement-32.png"
@@ -3217,10 +3217,10 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <archive id="albums_dev.zip" dtd="paquet">
 <zip>
 	<file>albums_dev.zip</file>
-	<size>169004</size>
-	<date>1359540018</date>
+	<size>186840</size>
+	<date>1360857660</date>
 	<source>_plugins_/albums/trunk</source>
-	<last_commit>2013-01-30 11:00:03</last_commit>
+	<last_commit>2013-02-14 17:00:59</last_commit>
 </zip>
 <traductions>
 <traduction module="album" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/albums/trunk/lang/" reference="fr">
@@ -3247,7 +3247,7 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 <paquet
 	prefix="Albums"
 	categorie="multimedia"
-	version="2.1.18"
+	version="2.2.0"
 	etat="test"
 	compatibilite="[3.0.0;3.0.*]"
 	logo="prive/themes/spip/images/albums-128.png"
@@ -3266,18 +3266,19 @@ _ Ce plugin a &#233;t&#233; test&#233; sous Spip v1.9.2c et Alternatives v1.9.2c
 	<pipeline nom="declarer_tables_auxiliaires" inclure="base/albums.php" />
 	<pipeline nom="declarer_tables_interfaces" inclure="base/albums.php" />
 
-	<pipeline nom="afficher_complement_objet" inclure="albums_pipelines.php" /><!-- ajout d'albums sur la page d'un objet-->
-	<pipeline nom="affiche_milieu" inclure="albums_pipelines.php" /><!-- objets lies sur la page d'un album-->
+	<pipeline nom="afficher_complement_objet" inclure="albums_pipelines.php" /><!-- ajout d'albums sur la page d un objet -->
+	<pipeline nom="affiche_milieu" inclure="albums_pipelines.php" /><!-- objets lies sur la page d'un album -->
 	<pipeline nom="compagnon_messages" inclure="albums_pipelines.php" /><!-- le compagnon -->
 	<pipeline nom="autoriser" inclure="albums_autorisations.php" />
 	<pipeline nom="insert_head_css" inclure="albums_pipelines.php" /> <!-- css pages publiques -->
-	<pipeline nom="post_edition" inclure="albums_pipelines.php" /> <!-- mise a jour des liens albums apres edition d'un objet-->
+	<pipeline nom="post_edition" inclure="albums_pipelines.php" /> <!-- mise a jour des liens albums apres edition d'un objet -->
 	<pipeline nom="objet_compte_enfants" inclure="albums_pipelines.php" /> <!-- compter nb albums dans un objet -->
 	<pipeline nom="boite_infos" inclure="albums_pipelines.php" /> <!-- nb albums dans une rubrique -->
+	<pipeline nom="jqueryui_plugins" inclure="albums_pipelines.php" /> <!-- drag n drop -->
 	<pipeline nom="optimiser_base_disparus" inclure="albums_pipelines.php" /> <!-- suppression liens morts -->
 
 	<necessite nom="saisies" compatibilite="[1.21.0;]" />
-	<!--<necessite nom="medias" compatibilite="[2.8.5;]" />--> <!-- pour SPIP 3.06 -->
+	<necessite nom="medias" compatibilite="[2.7.0;]" />
 	<utilise nom="inserer_modeles" compatibilite="[1.0.0;]" />
 
 	<menu nom="albums" titre="album:titre_albums" parent="menu_edition" icone="images/album-16.png" />
@@ -3373,10 +3374,10 @@ Managing series of documents with the albums is made more convenient.
 <archive id="amap_2.zip" dtd="plugin">
 <zip>
 	<file>amap_2.zip</file>
-	<size>85906</size>
-	<date>1357772402</date>
+	<size>87742</size>
+	<date>1360836008</date>
 	<source>_plugins_/amap/branches/v2</source>
-	<last_commit>2013-01-10 00:00:02</last_commit>
+	<last_commit>2013-02-14 11:00:06</last_commit>
 </zip>
 <traductions>
 <traduction module="amap" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/Amap/lang/" reference="fr">
@@ -12810,10 +12811,10 @@ Compatibilidade: SPIP 1.91
 <archive id="couteau_suisse.zip" dtd="paquet">
 <zip>
 	<file>couteau_suisse.zip</file>
-	<size>714621</size>
-	<date>1359633602</date>
+	<size>718996</size>
+	<date>1360807224</date>
 	<source>_plugins_/couteau_suisse</source>
-	<last_commit>2013-01-31 13:00:02</last_commit>
+	<last_commit>2013-02-14 03:00:22</last_commit>
 </zip>
 <traductions>
 <traduction module="couteau" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/couteau_suisse/lang/" reference="fr">
@@ -14579,10 +14580,10 @@ Il permet ainsi de définir en fonction d’un secteur particulier, un masque de
 <archive id="diogene.zip" dtd="paquet">
 <zip>
 	<file>diogene.zip</file>
-	<size>77176</size>
-	<date>1360598408</date>
+	<size>77196</size>
+	<date>1360666806</date>
 	<source>_plugins_/diogene/diogene/trunk</source>
-	<last_commit>2013-02-11 17:00:06</last_commit>
+	<last_commit>2013-02-12 12:00:05</last_commit>
 </zip>
 <traductions>
 <traduction module="diogene" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/diogene/diogene/trunk/lang/" reference="fr">
@@ -25939,10 +25940,10 @@ INFOBOX permet aux concepteurs de squelettes de faire remonter des messages d'al
 <archive id="inscription3.zip" dtd="paquet">
 <zip>
 	<file>inscription3.zip</file>
-	<size>154264</size>
-	<date>1360206058</date>
+	<size>156910</size>
+	<date>1360749624</date>
 	<source>_plugins_/inscription/trunk</source>
-	<last_commit>2013-02-07 04:00:57</last_commit>
+	<last_commit>2013-02-13 11:00:23</last_commit>
 </zip>
 <traductions>
 <traduction module="inscription3" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/inscription/trunk/lang/" reference="fr">
@@ -30382,10 +30383,10 @@ This plugin works on skeletons which have the <code>#INSERT_HEAD</code> tag.
 <archive id="mediaspip_player.zip" dtd="paquet">
 <zip>
 	<file>mediaspip_player.zip</file>
-	<size>471215</size>
-	<date>1359774172</date>
+	<size>472810</size>
+	<date>1360764006</date>
 	<source>_plugins_/mediaspip_player/trunk</source>
-	<last_commit>2013-02-02 04:02:51</last_commit>
+	<last_commit>2013-02-13 15:00:05</last_commit>
 </zip>
 <traductions>
 <traduction module="mediaspip_player" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/mediaspip_player/trunk/lang/" reference="fr">
@@ -30403,8 +30404,8 @@ This plugin works on skeletons which have the <code>#INSERT_HEAD</code> tag.
 <paquet
 	prefix="mediaspip_player"
 	categorie="multimedia"
-	version="1.4.0"
-	etat="dev"
+	version="1.4.1"
+	etat="stable"
 	compatibilite="[3.0.0;3.0.99]"
 	logo="images/html5_player_logo.png"
 	schema="0.1"
@@ -30414,11 +30415,10 @@ This plugin works on skeletons which have the <code>#INSERT_HEAD</code> tag.
 >	
 
 	<nom>Lecteur de m&#233;dias de MediaSPIP</nom>
-	<!-- Lecteur multimédia HTML5 pour MediaSPIP -->
 
 	<auteur lien="http://www.kent1.info" mail="kent1@arscenic.info">kent1</auteur>
 
-	<copyright>2010-2012</copyright>
+	<copyright>2010-2013</copyright>
 
 	<licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GPL 3</licence>
 
@@ -37746,16 +37746,16 @@ _ &#169; 2008 - <multi>[fr]Distribu&#233; sous licence[en]Released under license
 <archive id="pdfjs.zip" dtd="paquet">
 <zip>
 	<file>pdfjs.zip</file>
-	<size>549274</size>
-	<date>1359651638</date>
+	<size>551583</size>
+	<date>1360774810</date>
 	<source>_plugins_/pdfjs</source>
-	<last_commit>2013-01-31 18:00:03</last_commit>
+	<last_commit>2013-02-13 18:00:08</last_commit>
 </zip>
 
 <paquet
 	prefix="pdfjs"
 	categorie="multimedia"
-	version="0.2.1"
+	version="0.2.2"
 	etat="test"
 	compatibilite="[2.0.0;["
 	logo="prive/themes/spip/images/pdfjs-32.png"
@@ -41972,10 +41972,10 @@ Pour éviter les doublons et les imports successifs, une fois l'article créé, 
 <archive id="saisies.zip" dtd="paquet">
 <zip>
 	<file>saisies.zip</file>
-	<size>167722</size>
-	<date>1360584016</date>
+	<size>167841</size>
+	<date>1360846826</date>
 	<source>_plugins_/saisies</source>
-	<last_commit>2013-02-11 13:00:15</last_commit>
+	<last_commit>2013-02-14 14:00:19</last_commit>
 </zip>
 <traductions>
 <traduction module="paquet-saisies" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/saisies/lang/" reference="fr">
@@ -42027,7 +42027,7 @@ Pour éviter les doublons et les imports successifs, une fois l'article créé, 
 <paquet
 	prefix="saisies"
 	categorie="outil"
-	version="1.28.3"
+	version="1.29.0"
 	etat="test"
 	compatibilite="[2.0.0;3.0.*]"
 	logo="images/logo_saisie_48.png"
@@ -46727,10 +46727,10 @@ PMB est un Sigb (Syst&#232;me Int&#233;gr&#233; de Gestion de Biblioth&#232;que)
 <archive id="spip2spip_2_0.zip" dtd="plugin">
 <zip>
 	<file>spip2spip_2_0.zip</file>
-	<size>23469</size>
-	<date>1359522042</date>
+	<size>23845</size>
+	<date>1360810808</date>
 	<source>_plugins_/spip2spip/branches/v2</source>
-	<last_commit>2013-01-30 06:00:25</last_commit>
+	<last_commit>2013-02-14 04:00:06</last_commit>
 </zip>
 <traductions>
 <traduction module="spiptospip" reference="fr">
@@ -46742,7 +46742,7 @@ PMB est un Sigb (Syst&#232;me Int&#233;gr&#233; de Gestion de Biblioth&#232;que)
 	<slogan>Synchroniser le contenu de plusieurs sites SPIP entre eux</slogan>
 	<auteur>[erational.org->http://www.erational.org]</auteur>
 	<licence>GNU/GPL</licence>
-	<version>2.4.1</version>
+	<version>2.4.2</version>
 	<etat>stable</etat>
 	<description>
 Permet d'importer et d'exporter des articles avec d'autres sites SPIP en conservant le formatage spip, auteurs, mots-cl&#233;s,...
@@ -46784,17 +46784,63 @@ et si vous utilisez agenda, <code>http://www.domaine.tld/spip.php?page=backend-s
 
 </archive>
 
-<archive id="spip2spip_3_0.zip">
+<archive id="spip2spip_3_0.zip" dtd="paquet">
 <zip>
 	<file>spip2spip_3_0.zip</file>
-	<size>496</size>
-	<date>1359522018</date>
+	<size>32566</size>
+	<date>1360818012</date>
 	<source>_plugins_/spip2spip/trunk</source>
-	<last_commit>2013-01-30 06:00:18</last_commit>
+	<last_commit>2013-02-14 06:00:07</last_commit>
 </zip>
+<traductions>
+<traduction module="spip2spip" reference="fr">
+</traduction>
+</traductions>
 
+<paquet
+	prefix="spip2spip"
+	categorie="edition"
+	version="3.0.0"
+	etat="stable"
+	compatibilite="[3.0.5;3.0.*]"
+	logo="prive/themes/spip/images/spip2spip-32.png"
+	documentation="http://contrib.spip.net/Spip2Spip"
+	schema="1.2.0" 
+>
 
+	<nom>Spip2Spip</nom>
+	<auteur lien='http://www.erational.org'>erational</auteur>
+  <licence>GNU/GPL</licence>
 
+	<necessite nom="saisies" compatibilite="[1.24.0;]" /> 
+
+	<pipeline nom="declarer_tables_objets_sql" inclure="base/spip2spip.php" /> 
+	<pipeline nom="declarer_tables_interfaces" inclure="base/spip2spip.php" />
+  <pipeline nom="taches_generales_cron" inclure="spip2spip_pipelines.php" />
+
+	<menu nom="spip2spips" titre="spip2spip:titre_spip2spips" parent="menu_edition" icone="images/spip2spip-16.png" action="spip2spips" /> 
+</paquet>
+<multis>
+<nom>
+<multi>
+[fr]Spip2Spip
+</multi>
+</nom>
+<slogan>
+<multi>
+[fr]Synchroniser le contenu de plusieurs sites SPIP entre eux
+</multi>
+</slogan>
+<description>
+<multi>
+[fr]Permet d'importer et d'exporter des articles avec d'autres sites SPIP en conservant le formatage spip, auteurs, mots-cl&#233;s,...
+  
+-* {{importer des articles:}} attribuer les mots-cl&#233;s du groupe d&#233;di&#233; {- spip2spip -} &#224; vos rubriques et inscrire les flux spip2spip de vos sites partenaires 
+-* {{diffuser vos articles:}} attribuer les mots-cl&#233;s du groupe d&#233;di&#233; {- spip2spip -} &#224; vos articles et donner votre adresse de flux spip2spip (simple) <code>http://www.domaine.tld/spip.php?page=backend-spip2spip</code> 
+et si vous utilisez agenda, <code>http://www.domaine.tld/spip.php?page=backend-spip2spip-agenda</code>
+</multi>
+</description>
+</multis>
 
 </archive>
 
@@ -48133,10 +48179,10 @@ Les articles, rubriques et documents sont localis&#233;s g&#233;ographiquement e
 <archive id="spipmotion_v1.zip" dtd="plugin">
 <zip>
 	<file>spipmotion_v1.zip</file>
-	<size>103668</size>
-	<date>1339934438</date>
+	<size>105179</size>
+	<date>1360771210</date>
 	<source>_plugins_/spipmotion/branches/v1</source>
-	<last_commit>2012-06-17 14:00:36</last_commit>
+	<last_commit>2013-02-13 17:00:07</last_commit>
 </zip>
 <traductions>
 <traduction module="spipmotion" gestionnaire="salvatore" url="http://trad.mediaspip.net" source="svn://zone.spip.org/spip-zone/_plugins_/spipmotion/lang" reference="fr">
@@ -48163,7 +48209,7 @@ Les articles, rubriques et documents sont localis&#233;s g&#233;ographiquement e
 	</description>
 	<lien>http://www.mediaspip.net/technical-documentation/plugins-used-by-mediaspip/spipmotion/</lien>
 	
-	<version>0.9.10</version>
+	<version>0.9.11</version>
 	<version_base>0.8.2</version_base>
 	<etat>test</etat>
 	<prefix>spipmotion</prefix>
@@ -48274,10 +48320,10 @@ Les articles, rubriques et documents sont localis&#233;s g&#233;ographiquement e
 <archive id="spipmotion.zip" dtd="paquet">
 <zip>
 	<file>spipmotion.zip</file>
-	<size>107261</size>
-	<date>1359730902</date>
+	<size>108529</size>
+	<date>1360810822</date>
 	<source>_plugins_/spipmotion/trunk</source>
-	<last_commit>2013-02-01 16:00:49</last_commit>
+	<last_commit>2013-02-14 04:00:21</last_commit>
 </zip>
 <traductions>
 <traduction module="paquet-spipmotion" gestionnaire="salvatore" url="http://trad.spip.net" source="svn://zone.spip.org/spip-zone/_plugins_/spipmotion/trunk/lang/" reference="fr">
@@ -48298,7 +48344,7 @@ Les articles, rubriques et documents sont localis&#233;s g&#233;ographiquement e
 <paquet
 	prefix="spipmotion"
 	categorie="multimedia"
-	version="1.2.3"
+	version="1.2.4"
 	etat="stable"
 	compatibilite="[3.0.0;3.0.99]"
 	logo="images/spipmotion.png"
@@ -56558,10 +56604,10 @@ Thomas Delhomenie pour l&#8217;am&#233;lioration de la page des r&#232;gles CSS.
 <archive id="eva_habillage_pour_spip_3_0.zip" dtd="paquet">
 <zip>
 	<file>eva_habillage_pour_spip_3_0.zip</file>
-	<size>4503133</size>
-	<date>1359554412</date>
+	<size>4514152</size>
+	<date>1360677608</date>
 	<source>_squelettes_/eva-web/4_2/eva_habillage</source>
-	<last_commit>2013-01-30 15:00:09</last_commit>
+	<last_commit>2013-02-12 15:00:06</last_commit>
 </zip>
 <traductions>
 <traduction module="evahabillage_config" reference="fr">
@@ -56573,7 +56619,7 @@ Thomas Delhomenie pour l&#8217;am&#233;lioration de la page des r&#232;gles CSS.
 <paquet
   prefix="eva_habillage"
   categorie="squelette"
-  version="4.2.4"
+  version="4.2.5"
   etat="stable"
   compatibilite="[2.9.9;3.0.99]"
   logo="prive/themes/spip/images/logo_eva3_fb.png"

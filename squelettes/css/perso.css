@@ -33,6 +33,10 @@ header {
 	margin-left: 20px;
 }
 
+.logo_site a:hover {
+	background: none;
+}
+
 /* Classe générale qui sert à styler les cadres */
 .cadre {
 	box-shadow: inset 0px 0px 4px #babab9;
@@ -64,7 +68,7 @@ a.mediabox:hover {
 }
 
 /* Menu Header */
-nav#navHeader {
+#navHeader {
 	float: right;
 	margin-top: 240px;
 	width: 688px;
@@ -96,10 +100,13 @@ nav#navHeader {
 }
 
 /* Menu Sidebar */
-nav#navSidebar {
+#navSidebar {
 	float: left;
-	padding: 10px;
 	width: 170px;
+}
+
+#navSidebar nav {
+	padding: 10px;
 }
 
 #menuSidebar .submenuSidebar {
@@ -202,4 +209,23 @@ h3 {
 	height: 500px;
 	margin: 0 auto;
 	margin-bottom: 20px;
+}
+
+#formulaire_recherche {
+	position: static;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.formulaire_recherche input.text {
+	width: 105px;
+}
+
+#login_box {
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.formulaire_login input.text {
+	width: 105px;
 }
