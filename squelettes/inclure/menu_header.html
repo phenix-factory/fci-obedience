@@ -10,7 +10,7 @@
 		<//B_menuTopA>
 		
 		[(#REM) On afficher les rubriques du menu header ]
-		<BOUCLE_menuTop(RUBRIQUES){id_parent=1}{par num titre}{lang}>
+		<BOUCLE_menuTop(RUBRIQUES){id_parent=1}{par num titre}>
 			<li class="mainMenuItem">
 				<a href="#URL_RUBRIQUE" title="[(#TITRE)]" [class="(#EXPOSE)"]>[(#TITRE|supprimer_numero)]</a>
 				<B_submenu>
